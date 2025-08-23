@@ -1,0 +1,283 @@
+Date
+option_id
+expiration_date
+price
+call_put
+Open
+High
+Low
+Close
+Volume
+Dividends
+Stock Splits
+option_symbol
+dte
+stocks_id
+price_strike
+price_open
+price_high
+price_low
+volume
+openinterest
+iv
+delta
+preiv
+gamma
+theta
+vega
+rho
+Ask
+Bid
+underlying_price
+calc_OTM
+RSI
+MACD
+MACD Signal
+MACD Hist
+total_articles
+positive_articles
+neutral_articles
+negative_articles
+average_sentiment_score
+Revenue per Share
+EBITDA per Share
+EBIT per Share
+Earnings per Share (Diluted)
+EPS without NRI
+Owner Earnings per Share (TTM)
+Free Cash Flow per Share
+Operating Cash Flow per Share
+Cash per Share
+Dividends per Share
+Book Value per Share
+Tangible Book per Share
+Total Debt per Share
+Month End Stock Price
+ROE %
+ROE % Adjusted to Book Value
+ROA %
+Return-on-Tangible-Equity
+Return-on-Tangible-Asset
+ROC (Joel Greenblatt) %
+ROCE %
+5-Year RORE %
+1-Year ROIIC %
+ROIC %
+WACC %
+Effective Interest Rate on Debt %
+Gross Margin %
+Operating Margin %
+Net Margin %
+EBITDA Margin %
+FCF Margin %
+Debt-to-Equity
+Equity-to-Asset
+Debt-to-Asset
+Liabilities-to-Assets
+Gross-Profit-to-Asset %
+Degree of Financial Leverage
+Asset Turnover
+Dividend Payout Ratio
+Days Sales Outstanding
+Days Payable
+Days Inventory
+Cash Conversion Cycle
+Receivables Turnover
+Inventory Turnover
+COGS-to-Revenue
+Inventory-to-Revenue
+Capex-to-Revenue
+Capex-to-Operating-Income
+Capex-to-Operating-Cash-Flow
+Revenue
+Cost of Goods Sold
+Gross Profit
+Gross Margin %.1
+Selling. General. & Admin. Expense
+Research & Development
+Other Operating Expense
+Total Operating Expense
+Operating Income
+Operating Margin %.1
+  Interest Income
+  Interest Expense
+Net Interest Income
+Other Income (Expense)
+Pre-Tax Income
+Tax Provision
+Tax Rate %
+Other Net Income (Loss)
+Net Income Including Noncontrolling Interests
+  Net Income (Continuing Operations)
+  Net Income (Discontinued Operations)
+Other Income (Minority Interest)
+Net Income
+Net Margin %.1
+Preferred Dividends
+EPS (Basic)
+EPS (Diluted)
+Shares Outstanding (Diluted Average)
+EBIT
+Depreciation. Depletion and Amortization
+EBITDA
+EBITDA Margin %.1
+  Cash And Cash Equivalents
+  Marketable Securities
+Cash. Cash Equivalents. Marketable Securities
+  Accounts Receivable
+  Notes Receivable
+  Loans Receivable
+  Other Current Receivables
+Total Receivables
+  Inventories. Raw Materials & Components
+  Inventories. Work In Process
+  Inventories. Inventories Adjustments
+  Inventories. Finished Goods
+  Inventories. Other
+Total Inventories
+Other Current Assets
+Total Current Assets
+Investments And Advances
+  Land And Improvements
+  Buildings And Improvements
+  Machinery. Furniture. Equipment
+  Construction In Progress
+  Other Gross PPE
+Gross Property. Plant and Equipment
+  Accumulated Depreciation
+Property. Plant and Equipment
+Intangible Assets
+  Goodwill
+Other Long Term Assets
+Total Long-Term Assets
+Total Assets
+  Accounts Payable
+  Total Tax Payable
+  Other Current Payables
+  Current Accrued Expense
+Accounts Payable & Accrued Expense
+  Short-Term Debt
+  Short-Term Capital Lease Obligation
+Short-Term Debt & Capital Lease Obligation
+  Current Deferred Revenue
+  Current Deferred Taxes Liabilities
+DeferredTaxAndRevenue
+Other Current Liabilities
+Total Current Liabilities
+  Long-Term Debt
+  Long-Term Capital Lease Obligation
+Long-Term Debt & Capital Lease Obligation
+Debt-to-Equity.1
+PensionAndRetirementBenefit
+NonCurrent Deferred Liabilities
+Other Long-Term Liabilities
+Total Long-Term Liabilities
+Total Liabilities
+Common Stock
+Preferred Stock
+Retained Earnings
+Accumulated other comprehensive income (loss)
+Additional Paid-In Capital
+Treasury Stock
+Other Stockholders Equity
+Total Stockholders Equity
+Minority Interest
+Total Equity
+Equity-to-Asset.1
+Net Income From Continuing Operations
+Depreciation. Depletion and Amortization.1
+  Change In Receivables
+  Change In Inventory
+  Change In Prepaid Assets
+  Change In Payables And Accrued Expense
+  Change In Other Working Capital
+Change In Working Capital
+Deferred Tax
+Stock Based Compensation
+Asset Impairment Charge
+Cash from Discontinued Operating Activities
+Cash Flow from Others
+Cash Flow from Operations
+Purchase Of Property. Plant. Equipment
+Sale Of Property. Plant. Equipment
+Purchase Of Business
+Sale Of Business
+Purchase Of Investment
+Sale Of Investment
+Net Intangibles Purchase And Sale
+Cash From Discontinued Investing Activities
+Cash From Other Investing Activities
+Cash Flow from Investing
+Issuance of Stock
+Repurchase of Stock
+Net Issuance of Preferred Stock
+  Issuance of Debt
+  Payments of Debt
+Net Issuance of Debt
+Cash Flow for Dividends
+Cash Flow for Lease Financing
+Other Financing
+Cash Flow from Financing
+Beginning Cash Position
+  Effect of Exchange Rate Changes
+Net Change in Cash
+Ending Cash Position
+Capital Expenditure
+Free Cash Flow
+PE Ratio
+PE Ratio without NRI
+Price-to-Owner-Earnings
+PB Ratio
+Price-to-Tangible-Book
+Price-to-Free-Cash-Flow
+Price-to-Operating-Cash-Flow
+PS Ratio
+PEG Ratio
+EV-to-Revenue
+EV-to-EBITDA
+EV-to-EBIT
+Earnings Yield (Joel Greenblatt) %
+Forward Rate of Return (Yacktman) %
+Shiller PE Ratio
+Cyclically Adjusted PB Ratio
+Cyclically Adjusted PS Ratio
+Cyclically Adjusted Price-to-FCF
+Dividend Yield %
+FCF Yield %
+Market Cap
+Enterprise Value
+Month End Stock Price.1
+Net Cash per Share
+Net Current Asset Value
+Net-Net Working Capital
+Intrinsic Value: Projected FCF
+Median PS Value
+Peter Lynch Fair Value
+Graham Number
+Earnings Power Value (EPV)
+Altman Z-Score
+Piotroski F-Score
+Beneish M-Score
+Scaled Net Operating Assets
+Sloan Ratio %
+Current Ratio
+Quick Ratio
+Cash Ratio
+Interest Coverage
+Highest Stock Price
+Lowest Stock Price
+Shares Buyback Ratio %
+Buyback Yield %
+YoY Rev. per Sh. Growth
+YoY EPS Growth
+YoY EBITDA Growth
+5-Year EBITDA Growth Rate
+Shares Outstanding (Basic Average)
+Shares Outstanding (EOP)
+Beta
+Filing Date
+Restated Filing Date
+Earnings Release Date
+Number of Shareholders
+Number of Employees
+call_put_encoded
