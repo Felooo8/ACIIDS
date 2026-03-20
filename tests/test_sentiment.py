@@ -33,9 +33,9 @@ def test_aggregate_daily_sentiment_summarizes_scores() -> None:
     record = summary[0]
     assert record["date"] == "2026-03-20"
     assert record["total_articles"] == 2
-    assert record["positive_articles"] == 1
-    assert record["neutral_articles"] == 1
-    assert record["negative_articles"] == 1
+    assert record["positive_chunks"] == 1
+    assert record["neutral_chunks"] == 1
+    assert record["negative_chunks"] == 1
     assert record["average_sentiment_score"] == pytest.approx((0.8 + 0.5 + 0.7) / 3)
 
 

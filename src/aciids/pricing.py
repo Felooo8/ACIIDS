@@ -54,8 +54,21 @@ def _payoff(option_type: str, terminal_price: float, strike: float) -> float:
 def black_scholes_price(contract: OptionContract) -> float:
     """Return the analytical Black-Scholes price for a European option."""
     contract.validate()
-    sigma = contract.safe_volatility
-    time_to_expiry = contract.safe_time_to_expiry
+
+    # At expiration the option is worth its intrinsic value.
+    if contract.time_to_expiry == 0:
+        return _payoff(contract.option_type, contract.spot, contract.strike)
+
+    # With zero volatility the stock grows deterministically at the risk-free rate;
+    # return the present value of the resulting forward payoff.
+    if contract.volatility == 0:
+        forward = contract.spot * exp(contract.risk_free_rate * contract.time_to_expiry)
+        return exp(-contract.risk_free_rate * contract.time_to_expiry) * _payoff(
+            contract.option_type, forward, contract.strike
+        )
+
+    sigma = contract.volatility
+    time_to_expiry = contract.time_to_expiry
     d1 = (
         log(contract.spot / contract.strike)
         + (contract.risk_free_rate + 0.5 * sigma**2) * time_to_expiry
@@ -80,8 +93,19 @@ def binomial_price(contract: OptionContract, steps: int = 200) -> float:
     if steps <= 0:
         raise ValueError("steps must be positive")
 
-    time_to_expiry = contract.safe_time_to_expiry
-    sigma = contract.safe_volatility
+    # At expiration the option is worth its intrinsic value.
+    if contract.time_to_expiry == 0:
+        return _payoff(contract.option_type, contract.spot, contract.strike)
+
+    # With zero volatility the stock grows deterministically.
+    if contract.volatility == 0:
+        forward = contract.spot * exp(contract.risk_free_rate * contract.time_to_expiry)
+        return exp(-contract.risk_free_rate * contract.time_to_expiry) * _payoff(
+            contract.option_type, forward, contract.strike
+        )
+
+    time_to_expiry = contract.time_to_expiry
+    sigma = contract.volatility
     dt = time_to_expiry / steps
     up = exp(sigma * sqrt(dt))
     down = 1 / up
@@ -116,9 +140,20 @@ def monte_carlo_price(
     if simulations <= 0:
         raise ValueError("simulations must be positive")
 
+    # At expiration the option is worth its intrinsic value.
+    if contract.time_to_expiry == 0:
+        return _payoff(contract.option_type, contract.spot, contract.strike)
+
+    # With zero volatility the stock grows deterministically.
+    if contract.volatility == 0:
+        forward = contract.spot * exp(contract.risk_free_rate * contract.time_to_expiry)
+        return exp(-contract.risk_free_rate * contract.time_to_expiry) * _payoff(
+            contract.option_type, forward, contract.strike
+        )
+
     rng = Random(seed)
-    time_to_expiry = contract.safe_time_to_expiry
-    sigma = contract.safe_volatility
+    time_to_expiry = contract.time_to_expiry
+    sigma = contract.volatility
     drift = (contract.risk_free_rate - 0.5 * sigma**2) * time_to_expiry
     diffusion = sigma * sqrt(time_to_expiry)
 
