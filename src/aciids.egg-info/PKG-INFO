@@ -1,0 +1,116 @@
+Metadata-Version: 2.4
+Name: aciids
+Version: 0.1.0
+Summary: Code and research artifacts for the ACIIDS 2025 paper on option pricing with neural networks, LLMs, and reinforcement learning.
+Author: Repository Owner
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: ruff>=0.11; extra == "dev"
+Provides-Extra: research
+Requires-Dist: arch>=7.0; extra == "research"
+Requires-Dist: gymnasium>=1.0; extra == "research"
+Requires-Dist: matplotlib>=3.8; extra == "research"
+Requires-Dist: numpy>=1.26; extra == "research"
+Requires-Dist: pandas>=2.2; extra == "research"
+Requires-Dist: QuantLib>=1.36; extra == "research"
+Requires-Dist: scikit-learn>=1.5; extra == "research"
+Requires-Dist: scipy>=1.12; extra == "research"
+Requires-Dist: stable-baselines3>=2.5; extra == "research"
+Requires-Dist: tensorflow>=2.16; extra == "research"
+Requires-Dist: transformers>=4.40; extra == "research"
+Dynamic: license-file
+
+# ACIIDS 2025 — Options Pricing Platform with Neural Networks, LLMs and Reinforcement Learning
+
+This repository contains the codebase and research artifacts for the ACIIDS 2025 conference paper:
+
+> **Feliks Bańka, Jarosław A. Chudziak.** *Options Pricing Platform with Neural Networks, LLMs and Reinforcement Learning.* In **Recent Challenges in Intelligent Information and Database Systems (ACIIDS 2025)**, CCIS 2493, pp. 202–216. First online: 17 April 2025.
+>
+> Springer link: https://link.springer.com/chapter/10.1007/978-981-96-5881-7_16
+
+The work presents a hybrid option pricing platform that combines neural networks, reinforcement learning, GARCH-based volatility modeling, technical indicators, and sentiment signals extracted from financial news with large language models. The project received the **Best Student Paper Award**.
+
+## Project focus
+The main goal of the platform is to improve option pricing and trading decisions in volatile markets by combining:
+- **traditional pricing baselines** such as Black-Scholes, Monte Carlo, and Heston-style modeling,
+- **deep learning models** for adaptive option price prediction,
+- **reinforcement learning** for trading-policy optimization,
+- **sentiment analysis** derived from news and LLM-based processing,
+- **technical and volatility features** including GARCH-derived estimates.
+
+## Repository layout
+```text
+.
+├── README.md
+├── LICENSE
+├── pyproject.toml
+├── Makefile
+├── .env.example
+├── src/aciids/                   # Small reusable package extracted from the research code
+├── research/
+│   ├── pipeline/                 # Main end-to-end platform scripts used in the project
+│   ├── analysis/                 # Volatility and Heston-related experiments
+│   ├── pricing_engine/           # Core pricing / training experiments kept from the paper work
+│   ├── sentiment_analysis/       # News and sentiment processing scripts
+│   └── archive/                  # Older snapshots and duplicate experiment variants retained for reference
+├── models/                       # Trained model artifacts
+├── examples/                     # Minimal example for the cleaned public API
+└── tests/                        # Fast validation for reusable code
+```
+
+## What is where
+### Main paper-related code
+- `research/pipeline/main.py` — top-level experiment orchestration for the pricing / trading workflow.
+- `research/pipeline/helpers.py` — preprocessing, sequence generation, training helpers, and metrics.
+- `research/pipeline/ppo_model.py` — PPO trading environment and training loop.
+- `research/pipeline/traditional_models.py` — traditional pricing models, volatility helper, and trading environments.
+
+### Reusable extracted components
+The `src/aciids` package is a lightweight, cleaner API extracted from the larger research codebase. It keeps the repository easier to test and maintain without changing the original intent of the paper.
+
+### Archived experiments
+Some historical experiment variants were moved into `research/archive/` so the main repository surface stays cleaner while still preserving earlier snapshots used during development.
+
+## Quick start
+### Lightweight setup
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .[dev]
+```
+
+### Full research environment
+```bash
+pip install -e .[dev,research]
+```
+
+### Run checks
+```bash
+make check
+```
+
+### Run the lightweight example
+```bash
+PYTHONPATH=src python examples/pricing_demo.py
+```
+
+## Reproducibility notes
+- Large raw datasets are intentionally not tracked in Git.
+- Model artifacts produced during the research are stored in `models/`.
+- Environment variables and common local paths are documented in `.env.example`.
+- The repository keeps both cleaned utilities and original research scripts; the latter are preserved to reflect the actual paper implementation process.
+
+## Engineering cleanup applied
+This version of the repository was reorganized to make the paper code easier to navigate:
+- root-level experimental scripts were moved into `research/pipeline/`,
+- empty placeholder files were removed,
+- noisy duplicate snapshots were moved into `research/archive/`,
+- the misspelled `traditinal_models.py` module was corrected,
+- lightweight tests, CI, and packaging were added without replacing the original research code.
+
+## Citation
+If you reference this repository, please cite the ACIIDS 2025 paper above.
