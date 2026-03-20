@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "Options Pricing Platform with Neural Networks, LLMs and Reinforcement Learning"
+message: "If you use this repository, please cite the associated ACIIDS 2025 conference paper."
+type: software
+authors:
+  - family-names: "Bańka"
+    given-names: "Feliks"
+  - family-names: "Chudziak"
+    given-names: "Jarosław A."
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: "Bańka"
+      given-names: "Feliks"
+    - family-names: "Chudziak"
+      given-names: "Jarosław A."
+  title: "Options Pricing Platform with Neural Networks, LLMs and Reinforcement Learning"
+  conference-title: "Recent Challenges in Intelligent Information and Database Systems"
+  collection-title: "Communications in Computer and Information Science"
+  volume: 2493
+  start: 202
+  end: 216
+  date-released: 2025-04-17
+  url: "https://link.springer.com/chapter/10.1007/978-981-96-5881-7_16"

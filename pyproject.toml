@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aciids"
+version = "0.1.0"
+description = "Code and research artifacts for the ACIIDS 2025 paper on option pricing with neural networks, LLMs, and reinforcement learning."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Repository Owner" }
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.11"
+]
+research = [
+  "arch>=7.0",
+  "gymnasium>=1.0",
+  "matplotlib>=3.8",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "QuantLib>=1.36",
+  "scikit-learn>=1.5",
+  "scipy>=1.12",
+  "stable-baselines3>=2.5",
+  "tensorflow>=2.16",
+  "transformers>=4.40"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "SIM"]
+ignore = ["E501"]
